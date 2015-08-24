@@ -1,0 +1,25 @@
+<p>
+    <a href="#/">Back to Search</a>
+</p>
+Forcast for {{city}}
+<hr/>
+<nav>
+  <ul class="pagination">
+    
+    <li ng-class="{'active': days ==='1'}"><a href="#/forecast/1">1</a></li>
+    <li ng-class="{'active': days ==='2'}"><a href="#/forecast/2">2</a></li>
+    <li ng-class="{'active': days ==='3'}"><a href="#/forecast/3">3</a></li>
+    <li ng-class="{'active': days ==='4'}"><a href="#/forecast/4">4</a></li>
+    <li ng-class="{'active': days ==='5'}"><a href="#/forecast/5">5</a></li>
+    <li ng-class="{'active': days ==='6'}"><a href="#/forecast/6">6</a></li>
+    <li ng-class="{'active': days ==='7'}"><a href="#/forecast/7">7</a></li>
+  </ul>
+</nav>
+<hr/>
+<div ng-repeat="item in weatherResult.list">
+    <div class="row">
+        <div class="col-md-12">
+           <weather-report weather-day="item" convert-temp="convertToCelsius(dayTimeTemp)" convert-to-date="convertToDate(dt)" format-string="MMM d, y"></weather-report>
+        </div>
+    </div>
+</div>
